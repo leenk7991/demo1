@@ -1,13 +1,23 @@
 package demo;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("hello world from local pc");
-	    System.out.println("hello world from github");
-	    System.out.println("this is branch1");
-	    Student s1 = new Student("leen", 3.1);
-	    System.out.println(s1);
+        System.out.println("Hello world!");
+        System.out.println("do you want to add a student?(y/n)");
+        Scanner sc = new Scanner(System.in);
+        String y = sc.next();
+        if(y.equalsIgnoreCase("y")){
+            System.out.println("enter student name: ");
+            String name = sc.next();
+            System.out.println("enter student GPA");
+            double GPA = sc.nextDouble();
+            Student s = new Student(name, GPA);
+            System.out.println("student created");
+            System.out.println(s.toString());
+        }
 	// write your code here
     }
 }
